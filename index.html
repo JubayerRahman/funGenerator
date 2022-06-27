@@ -95,7 +95,7 @@
         document.getElementById("action").style.display="none"
         document.getElementById("name").style.display="none"
         document.getElementById("fun").style.display="none"
-        document.getElementById("ErrorMessage").style.display="none"
+        // document.getElementById("ErrorMessage").style.display="none"
         document.getElementById("boardYes").addEventListener("click", function(){
             document.getElementById("name").style.display="block"
             document.getElementById("action").style.display="block"  
@@ -111,17 +111,18 @@
             const name = document.getElementById("name").value
             document.getElementById("userName").innerText = "Hi " + name;
 
-            fetch("http://www.boredapi.com/api/activity/")
+            fetch("")
+            //http://www.boredapi.com/api/activity/
             .then(resp=> resp.json())
             .then(data=>{
             document.getElementById("activity").innerText = data.activity;
             document.getElementById("activity_link").innerText = data.link;
+
+            
         })
-            catch(
-                document.getElementById("ErrorMessage").style.display="block"
-                document.getElementById("ErrorMessage").innerText = "Sorry This API is not working"
-                )
-        })
+        .catch(errer=> 
+        document.getElementById("ErrorMessage").innerText="Sorry can't load any activity right now")
+    })
     </script>
 </body>
 </html>
