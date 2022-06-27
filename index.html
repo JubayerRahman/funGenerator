@@ -85,6 +85,7 @@
         <h2 id="userName"></h2>
 
         <h1 id="activity"></h1>
+        <h1 id="ErrorMessage"></h1>
         <a id="activity_link" href="http://"></a>
         </div>
         
@@ -94,6 +95,7 @@
         document.getElementById("action").style.display="none"
         document.getElementById("name").style.display="none"
         document.getElementById("fun").style.display="none"
+        document.getElementById("ErrorMessage").style.display="none"
         document.getElementById("boardYes").addEventListener("click", function(){
             document.getElementById("name").style.display="block"
             document.getElementById("action").style.display="block"  
@@ -115,6 +117,10 @@
             document.getElementById("activity").innerText = data.activity;
             document.getElementById("activity_link").innerText = data.link;
         })
+            catch(
+                document.getElementById("ErrorMessage").style.display="block"
+                document.getElementById("ErrorMessage").innerText = "Sorry This API is not working"
+                )
         })
     </script>
 </body>
