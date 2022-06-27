@@ -111,7 +111,7 @@
             const name = document.getElementById("name").value
             document.getElementById("userName").innerText = "Hi " + name;
 
-            fetch("")
+            fetch("http://www.boredapi.com/api/activity/")
             //http://www.boredapi.com/api/activity/
             .then(resp=> resp.json())
             .then(data=>{
